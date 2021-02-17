@@ -1,0 +1,4 @@
+# remote: upstream
+chart-dirs:
+  - ./
+# build-id: pr-42
