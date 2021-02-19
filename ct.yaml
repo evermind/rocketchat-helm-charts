@@ -1,4 +1,6 @@
-# remote: upstream
+remote: origin
 chart-dirs:
   - ./
-# build-id: pr-42
+build-id: pr-42
+
+check-version-increment: false
