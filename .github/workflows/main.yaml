@@ -42,45 +42,13 @@ jobs:
       - name: Run chart-testing (lint)
         run: ct lint --all --chart-dirs ${PWD}
 
-      - name: Create kind cluster
-        uses: helm/kind-action@v1.0.0
-        if: steps.list-changed.outputs.changed == 'true'
-
-      - name: Run chart-testing (install)
-        run: ct install
-
-
-  # HexF-lint-test:
-  #   name: Lint helm chart
-  #   runs-on: ubuntu-latest
-
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v1
-
-  #     - name: Run chart-testing (lint)
-  #       id: lint
-  #       uses: HexF/chart-testing-action@v3.0.0
-  #       with:
-  #         command: lint
-  #         config: ./ct.yaml
-
+      # disabeld because of nonworking list-changed in current scenario
+      # TODO: fix branch strategy or repair list-changed
+      #
       # - name: Create kind cluster
-      #   uses: helm/kind-action@v1.0.0-alpha.3
-      #   with:
-      #     install_local_path_provisioner: true
-      #   # Only build a kind cluster if there are chart changes to test.
-      #   if: steps.lint.outputs.changed == 'true'
+      #   uses: helm/kind-action@v1.0.0
+      #   if: steps.list-changed.outputs.changed == 'true'
 
       # - name: Run chart-testing (install)
-      #   uses: HexF/chart-testing-action@v3.0.0
-      #   with:
-      #     command: install
+      #   run: ct install
 
-
-
-    # steps:
-    #   - uses: actions/checkout@v1
-    #   - uses: ./action-a
-    #     with:
-    #       MY_NAME: "Mona v${GITHUB_REF##*/}"
