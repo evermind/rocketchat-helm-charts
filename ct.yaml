@@ -1,5 +1,5 @@
-remote: origin
+# remote: origin
 # chart-dirs:
-#   - ./
+#   - ./charts
 # check-version-increment: false
 chart-repos: "bitnami=https://charts.bitnami.com/bitnami"
