@@ -1,11 +1,11 @@
 name: Action on push to latest
 
-on: 
-  push:
-    branches:
-      - master
-  pull_request:
-    types: [created, opened, edited]
+on: pull_request
+  # push:
+  #   branches:
+  #     - master
+  
+
 
 jobs:
   lint-test:
