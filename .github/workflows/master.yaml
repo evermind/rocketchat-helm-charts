@@ -5,7 +5,7 @@ on:
     branches: 
       - master
   pull_request:
-    types: [created, edited]
+    types: [created, opened, edited]
 
 jobs:
   release:
