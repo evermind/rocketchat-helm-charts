@@ -6,8 +6,7 @@ on:
       - master
   pull_request:
     types: [created, edited]
-    branches:
-      - master
+
 jobs:
   release:
     runs-on: ubuntu-latest
