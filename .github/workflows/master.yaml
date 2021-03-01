@@ -1,11 +1,11 @@
 name: Release charts
 
-on: 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: 
-      - master
+    branches: [ master ]
   pull_request:
-    types: [created, opened, edited]
+    branches: [ master ]
 
 jobs:
   release:
@@ -26,7 +26,6 @@ jobs:
         uses: azure/setup-helm@v1
         with:
           version: v3.4.0
-
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.2.0
